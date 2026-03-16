@@ -2,62 +2,94 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Sua Carta</title>
+<title>Revele sua carta</title>
 
 <style>
+
 body{
-background:black;
+background: radial-gradient(circle, #1a001f, #000000);
 display:flex;
 justify-content:center;
 align-items:center;
 height:100vh;
 margin:0;
+font-family:serif;
+color:white;
+flex-direction:column;
+}
+
+button{
+padding:15px 30px;
+font-size:18px;
+background:black;
+color:gold;
+border:2px solid gold;
+border-radius:10px;
+cursor:pointer;
+}
+
+button:hover{
+background:#111;
 }
 
 img{
+margin-top:30px;
 max-width:80%;
 border:5px solid gold;
-border-radius:10px;
-box-shadow:0 0 30px gold;
+border-radius:12px;
+box-shadow:0 0 25px gold;
+display:none;
 }
-</style>
 
+</style>
 </head>
 
 <body>
+
+<h2>🔮 Revele sua carta 🔮</h2>
+
+<button onclick="revelarCarta()">Revelar</button>
 
 <img id="carta">
 
 <script>
 
 var cartas = [
-"Convite-Tarot/Carta 0.png",
-"Convite-Tarot/Carta 1.png",
-"Convite-Tarot/Carta 2.png",
-"Convite-Tarot/Carta 3.png",
-"Convite-Tarot/Carta 4.png",
-"Convite-Tarot/Carta 5.png",
-"Convite-Tarot/Carta 6.png",
-"Convite-Tarot/Carta 7.png",
-"Convite-Tarot/Carta 8.png",
-"Convite-Tarot/Carta 9.png",
-"Convite-Tarot/Carta 10.png",
-"Convite-Tarot/Carta 11.png",
-"Convite-Tarot/Carta 12.png",
-"Convite-Tarot/Carta 13.png",
-"Convite-Tarot/Carta 14.png",
-"Convite-Tarot/Carta 15.png",
-"Convite-Tarot/Carta 16.png",
-"Convite-Tarot/Carta 17.png",
-"Convite-Tarot/Carta 18.png",
-"Convite-Tarot/Carta 19.png",
-"Convite-Tarot/Carta 20.png",
-"Convite-Tarot/Carta 21.png"
+"Carta 0.png",
+"Carta 1.png",
+"Carta 2.png",
+"Carta 3.png",
+"Carta 4.png",
+"Carta 5.png",
+"Carta 6.png",
+"Carta 7.png",
+"Carta 8.png",
+"Carta 9.png",
+"Carta 10.png",
+"Carta 11.png",
+"Carta 12.png",
+"Carta 13.png",
+"Carta 14.png",
+"Carta 15.png",
+"Carta 16.png",
+"Carta 17.png",
+"Carta 18.png",
+"Carta 19.png",
+"Carta 20.png",
+"Carta 21.png"
 ];
-  
+
+function revelarCarta(){
+
 var sorteada = cartas[Math.floor(Math.random()*cartas.length)];
 
-document.getElementById("carta").src = sorteada;
+var img = document.getElementById("carta");
+
+img.src = sorteada;
+
+img.style.display = "block";
+
+}
 
 </script>
 
